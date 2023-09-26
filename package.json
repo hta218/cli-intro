@@ -1,7 +1,7 @@
 {
 	"name": "cli-intro",
 	"version": "0.0.1",
-	"description": "",
+	"description": "My first CLI app built with Node.js x TypeScript",
 	"main": "index.js",
 	"scripts": {
 		"dev": "tsc -w",
@@ -11,7 +11,7 @@
 		"cli-intro": "./dist/index.js"
 	},
 	"keywords": [],
-	"author": "Leo Huynh",
+	"author": "Leo Huynh @ https://leohuynh.dev",
 	"license": "ISC",
 	"devDependencies": {
 		"@types/node": "^20.7.0",
