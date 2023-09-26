@@ -4,10 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "tsc -w"
 	},
 	"bin": {
-		"cli-intro": "./index.js"
+		"cli-intro": "./dist/index.js"
 	},
 	"keywords": [],
 	"author": "Leo Huynh",
