@@ -1,8 +1,8 @@
 {
 	"name": "cli-intro",
-	"version": "0.0.1",
+	"version": "1.0.2",
 	"description": "My first CLI app built with Node.js x TypeScript",
-	"main": "index.js",
+	"main": "src/index.ts",
 	"homepage": "https://leohuynh.dev",
 	"type": "module",
 	"repository": {
@@ -11,9 +11,12 @@
 	},
 	"scripts": {
 		"dev": "tsc -w",
-		"link-cli": "npm unlink cli-intro && npm link cli-intro"
+		"start": "node dist/index.js",
+		"link": "npm unlink cli-intro && chmod +x ./dist/index.js && npm link cli-intro"
 	},
-	"bin": "./dist/index.js",
+	"bin": {
+		"cli-intro": "./dist/index.js"
+	},
 	"keywords": [],
 	"author": "Leo Huynh @ https://leohuynh.dev",
 	"license": "ISC",
@@ -22,6 +25,7 @@
 		"typescript": "^5.2.2"
 	},
 	"dependencies": {
-		"commander": "^11.0.0"
+		"commander": "^11.0.0",
+		"enquirer": "^2.4.1"
 	}
 }
