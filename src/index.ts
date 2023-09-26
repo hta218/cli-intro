@@ -7,15 +7,18 @@ import enquirer from "enquirer";
 let program = new Command();
 let prompt = enquirer.prompt;
 
-function hello(name: string = "World") {
+function hello(name: string = "World", age?: number) {
   console.log(`Hello, ${name}!`);
+  if (age) {
+    console.log(`You are ${age} years old!`);
+  }
 }
 
 // Configure the program
 program
   .name("Intro to CLI")
   .description("My first Nodejs x Typescript CLI program")
-  .version("1.0.2");
+  .version("1.0.6");
 
 // Add actions
 program
@@ -28,15 +31,24 @@ program
         capitalize?: boolean;
       }
     ) => {
+      let age: number = 0;
       if (!name) {
-        let res = await prompt<{ name: string }>({
-          type: "input",
-          name: "name",
-          message: "What is your name?",
-        });
+        let res = await prompt<{ name: string; yob: number }>([
+          {
+            type: "input",
+            name: "name",
+            message: "What is your name?",
+          },
+          {
+            type: "numeral",
+            name: "yob",
+            message: "When were you born?",
+          },
+        ]);
         name = res.name;
+        age = new Date().getFullYear() - res.yob;
       }
-      hello(opts.capitalize ? name.toUpperCase() : name);
+      hello(opts.capitalize ? name.toUpperCase() : name, age);
     }
   );
 

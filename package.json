@@ -1,6 +1,6 @@
 {
 	"name": "cli-intro",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "My first CLI app built with Node.js x TypeScript",
 	"main": "src/index.ts",
 	"homepage": "https://leohuynh.dev",
