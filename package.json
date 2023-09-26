@@ -1,10 +1,9 @@
 {
 	"name": "cli-intro",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "My first CLI app built with Node.js x TypeScript",
 	"main": "src/index.ts",
 	"homepage": "https://leohuynh.dev",
-	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/hta218/cli-intro"
@@ -14,7 +13,8 @@
 		"start": "node dist/index.js",
 		"build": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js",
 		"up": "npm run build && npm publish --access public",
-		"link": "npm unlink cli-intro && chmod +x ./dist/index.js && npm link cli-intro"
+		"link": "npm unlink cli-intro && npm i -g && chmod +x ./dist/index.js && npm link cli-intro",
+		"unlink": "npm rm -g cli-intro && npm unlink cli-intro"
 	},
 	"bin": {
 		"cli-intro": "./dist/index.js"
